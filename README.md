@@ -2,7 +2,7 @@
 
 > **🎯 Challenge Submission by Chris Mwangi**  
 > Submitted: January 2026  
-> Repository: [GitHub Link - Add your URL here after pushing]
+> Repository: https://github.com/ChrispusGatia/simple-rdbms-pesapal2026
 
 A lightweight in-memory relational database system with a SQL-like interface and web-based CRUD interface.
 
