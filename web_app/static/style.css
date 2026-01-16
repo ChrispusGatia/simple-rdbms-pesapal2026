@@ -1,0 +1,15 @@
+/* Optional additional styles for SimpleDB web interface */
+
+/* This file can be used for custom styling beyond the base styles in base.html */
+
+/* Example: Custom button hover effects */
+.btn-custom {
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Add your custom styles here */

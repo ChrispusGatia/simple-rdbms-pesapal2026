@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Create New Table{% endblock %}
+
+{% block nav %}
+    <a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Create New Table</h2>
+    
+    <form method="POST">
+        <div class="form-group">
+            <label for="table_name">Table Name</label>
+            <input type="text" id="table_name" name="table_name" 
+                   placeholder="e.g., customers" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="columns">
+                Column Definitions
+                <span style="display: block; color: #7f8c8d; font-weight: normal; font-size: 0.9em; margin-top: 5px;">
+                    Format: column_name TYPE [PRIMARY KEY] [UNIQUE], ...
+                </span>
+            </label>
+            <textarea id="columns" name="columns" rows="5" 
+                      style="width: 100%; padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace; font-size: 14px;"
+                      placeholder="id INT PRIMARY KEY, name TEXT, email TEXT UNIQUE, age INT"
+                      required></textarea>
+        </div>
+        
+        <div style="background-color: #e8f4f8; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+            <h4 style="margin-top: 0; color: #2980b9;">Examples:</h4>
+            <p style="margin: 5px 0; font-family: monospace; font-size: 13px;">
+                <strong>Simple table:</strong><br>
+                id INT PRIMARY KEY, name TEXT, email TEXT
+            </p>
+            <p style="margin: 5px 0; font-family: monospace; font-size: 13px;">
+                <strong>With unique constraint:</strong><br>
+                id INT PRIMARY KEY, username TEXT UNIQUE, age INT
+            </p>
+            <p style="margin: 5px 0; font-family: monospace; font-size: 13px;">
+                <strong>Multiple types:</strong><br>
+                id INT PRIMARY KEY, title TEXT, price FLOAT, quantity INT, description TEXT
+            </p>
+            <p style="margin: 10px 0 0 0; color: #555; font-size: 13px;">
+                <strong>Supported types:</strong> INT, TEXT, FLOAT
+            </p>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn">Create Table</button>
+            <a href="{{ url_for('index') }}" class="btn" 
+               style="background-color: #95a5a6;">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

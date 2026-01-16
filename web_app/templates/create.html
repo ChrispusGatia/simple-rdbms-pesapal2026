@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Create Record - {{ table_name }}{% endblock %}
+
+{% block nav %}
+    <a href="{{ url_for('view_table', table_name=table_name) }}">Back to {{ table_name }}</a>
+{% endblock %}
+
+{% block content %}
+<div>
+    <h2>Create New Record in {{ table_name }}</h2>
+    
+    <form method="POST">
+        {% for col_name, col_type in columns %}
+            <div class="form-group">
+                <label for="{{ col_name }}">
+                    {{ col_name }} 
+                    <span style="color: #7f8c8d; font-weight: normal;">({{ col_type }})</span>
+                </label>
+                
+                {% if col_type == 'INT' %}
+                    <input type="number" id="{{ col_name }}" name="{{ col_name }}" required>
+                {% elif 'TEXT' in col_type or 'VARCHAR' in col_type or 'CHAR' in col_type %}
+                    <input type="text" id="{{ col_name }}" name="{{ col_name }}" required>
+                {% elif col_type in ['FLOAT', 'REAL', 'DOUBLE'] %}
+                    <input type="number" step="any" id="{{ col_name }}" name="{{ col_name }}" required>
+                {% else %}
+                    <input type="text" id="{{ col_name }}" name="{{ col_name }}" required>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <div class="form-group">
+            <button type="submit" class="btn">Create Record</button>
+            <a href="{{ url_for('view_table', table_name=table_name) }}" class="btn" 
+               style="background-color: #95a5a6;">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

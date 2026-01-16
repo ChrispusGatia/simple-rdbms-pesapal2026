@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}SimpleDB - Home{% endblock %}
+
+{% block content %}
+<div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2>Available Tables</h2>
+        <a href="{{ url_for('create_table') }}" class="btn">+ Create New Table</a>
+    </div>
+    
+    {% if tables %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Table Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for table in tables %}
+                <tr>
+                    <td><strong>{{ table }}</strong></td>
+                    <td>
+                        <a href="{{ url_for('view_table', table_name=table) }}" class="btn btn-small">View Records</a>
+                        <a href="{{ url_for('create_record', table_name=table) }}" class="btn btn-small">Add Record</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="empty-state">
+            <p>No tables found. Create tables using the REPL interface.</p>
+            <p style="margin-top: 10px;">
+                <code>python repl.py</code>
+            </p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
