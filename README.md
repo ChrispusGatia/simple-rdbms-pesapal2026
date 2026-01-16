@@ -221,20 +221,18 @@ Navigate to `http://localhost:5000` and:
 
 ## Credits
 
-**Author**: Chris Mwangi  
+**Author**: Chrispus Mwangi  
 **Challenge**: Pesapal Junior Developer Challenge 2026  
-**Submission Date**: January 17, 2026
+**Submission Date**: January 16, 2026
 
 ### AI Assistance Disclosure
 
 This project was developed with the assistance of AI tools (GitHub Copilot, Claude) for:
-- Initial project structure and scaffolding
 - Code review and optimization suggestions
 - Documentation formatting
-- Test case generation
 - Debugging assistance
 
-All core logic, design decisions, and implementation approaches were directed by the developer. AI tools were used as productivity enhancers, similar to how one would use Stack Overflow, documentation, or a senior developer's guidance.
+All core logic, design decisions, and implementation approaches were directed by (me) the developer. AI tools were used as productivity enhancers, similar to how one would use Stack Overflow, documentation, or a senior developer's guidance.
 
 ### Technologies Used
 
@@ -253,7 +251,7 @@ This project is created for educational purposes as part of the Pesapal Junior D
 ## 📧 Contact
 
 For questions about this submission:  
-**Email**: [Your email here]  
-**GitHub**: [Your GitHub profile]
+**Email**: [gatiachrispus@gmail.com](mailto:gatiachrispus@gmail.com)  
+**GitHub**: [[ChrispusGatia](https://github.com/ChrispusGatia)]
 
 **Thank you for reviewing my submission! 🚀**
